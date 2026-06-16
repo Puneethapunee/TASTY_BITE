@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasty Bite - Welcome</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .food-slideshow {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+    }
+
+    .food-slideshow .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        animation: fadeSlideshow 12s infinite;
+    }
+
+    .food-slideshow .slide:nth-child(1) { animation-delay: 0s; }
+    .food-slideshow .slide:nth-child(2) { animation-delay: 3s; }
+    .food-slideshow .slide:nth-child(3) { animation-delay: 6s; }
+
+    @keyframes fadeSlideshow {
+        0% { opacity: 0; }
+        10% { opacity: 1; }
+        40% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 0; }
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.55);
+        z-index: -1;
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+    }
+
+    .content h1 {
+        font-size: 3.5em;
+        font-weight: 600;
+        text-shadow: 0 0 25px #ff6347;
+    }
+
+    .btn-order {
+        margin-top: 30px;
+        padding: 15px 45px;
+        background: #ff6347;
+        border: none;
+        border-radius: 35px;
+        color: white;
+        font-size: 1.3em;
+        cursor: pointer;
+    }
+
+    .btn-order:hover {
+        background: #ff2a00;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="food-slideshow">
+    <img class="slide" src="https://www.shutterstock.com/image-photo/full-table-italian-meals-on-600nw-1829686103.jpg">
+    <img class="slide" src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+    <img class="slide" src="https://images.unsplash.com/photo-1534939561126-855b8675edd7">
+</div>
+
+<div class="overlay"></div>
+
+<div class="content">
+    <h1>Welcome to Tasty Bite</h1>
+    <!-- ✅ ONLY manual navigation -->
+    <button class="btn-order" onclick="goToLogin()">Order Now</button>
+</div>
+
+<script>
+    function goToLogin() {
+        window.location.href = "customer-login.html";
+    }
+</script>
+
+</body>
+</html>

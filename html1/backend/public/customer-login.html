@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Login - Tasty Bite</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        background:#fff3ef;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        font-family:'Poppins', sans-serif;
+    background-image: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .box {
+        background:white;
+        padding:40px;
+        border-radius:20px;
+        width:350px;
+        box-shadow:0 4px 20px rgba(0,0,0,0.2);
+        text-align:center;
+    }
+
+    h2 {
+        margin-bottom:20px;
+        color:#ff6347;
+    }
+
+    input {
+        width:100%;
+        padding:12px;
+        margin:10px 0;
+        border:1px solid #ccc;
+        border-radius:10px;
+    }
+
+    button {
+        width:100%;
+        padding:12px;
+        background:#ff6347;
+        border:none;
+        border-radius:25px;
+        color:white;
+        font-size:1.1em;
+        cursor:pointer;
+        margin-top:10px;
+        transition:0.3s;
+    }
+
+    button:hover {
+        background:#e04a33;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>Customer Login</h2>
+
+    <input type="text" id="name" placeholder="Enter Your Name" required>
+    <input type="email" id="email" placeholder="Enter Email" required>
+
+    <button onclick="goToMenu()">Continue</button>
+</div>
+
+<script>
+function goToMenu() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    if (!name || !email) {
+        alert("Please enter name & email");
+        return;
+    }
+
+    // Save customer info
+    localStorage.setItem("customerName", name);
+    localStorage.setItem("customerEmail", email);
+
+    // Go to menu page
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
